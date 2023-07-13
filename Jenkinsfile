@@ -6,7 +6,6 @@ pipeline {
     }
 
     stages {
-        stages {
 
         stage('Buld Info') {
             steps {
