@@ -30,14 +30,21 @@ pipeline {
         }
 
         stage('Deploy') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
             steps {
                 echo 'Deploying....'
             }
         }
     }
+
     post {
         always {
-            junit 'library-a/build/reports/**/*'
+            echo 'Post Action (collect test reports)...'
+            // junit 'library-a/build/reports/**/*'
         }
     }            
 }
