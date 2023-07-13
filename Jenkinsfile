@@ -18,8 +18,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh "./gradlew clean build"
-            }
-            steps {
                 archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
             }
         }
