@@ -8,7 +8,7 @@ pipeline {
                     sh "echo --> begin version"
                 }
                 script {
-                    sh "gradlew -version"
+                    sh "./gradlew -version"
                 }
                 script {
                     sh "echo <-- end version"
