@@ -6,6 +6,18 @@ pipeline {
     }
 
     stages {
+        stages {
+
+        stage('Buld Info') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Build #${env.BUILD_NUMBER}, tag ${env.BUILD_TAG}"
+                echo "Build URL ${env.BUILD_URL}"
+                echo "Jenkins URL ${env.JENKINS_URL}"
+                echo "Job name: ${env.JOB_NAME}"
+            }
+        }
+
         stage('Version') {
             steps {
                 script {
